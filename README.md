@@ -93,7 +93,7 @@ Analyze global layoff data to uncover high-level trends, key affected industries
 ### Analytical Focus
 
 | Category        | Question Answered                                         |
-|:----------------|:----------------------------------------------------------|
+|----------------|----------------------------------------------------------|
 | Company         | Which companies experienced the largest layoffs?          |
 | Industry        | Which sectors were most impacted?                         |
 | Country         | Which regions were affected most?                         |
@@ -141,32 +141,32 @@ FROM company_year_rank
 WHERE ranking <= 5
 ORDER BY year DESC, ranking;
 ```
-
 ### Key Insights
-- **2022–2023:** Highest layoff volume globally.  
-- **Industries:** Tech, Crypto, and Retail most affected.  
-- **Geography:** U.S. accounted for majority of layoffs.  
-- **Company Stage:** Public and late-stage firms led totals; startups had higher layoff percentages.  
-- **Trend:** Monthly totals rose mid-2022, peaking early 2023.  
+- **2022–2023:** The highest global layoff volume recorded.  
+- **Industries:** Tech, Crypto, and Retail sectors were most affected.  
+- **Geography:** The United States accounted for the largest share of total layoffs.  
+- **Company Stage:** Public and late-stage companies led in absolute layoffs, while startups saw higher relative percentages.  
+- **Trend:** Monthly totals increased sharply from mid-2022, peaking in early 2023.  
 
 ---
 
 ### Tools and Techniques
+
 | Category | Details |
-|:----------|:---------|
-| Database | MySQL Workbench for cleaning and analysis |
-| SQL Concepts | CTEs, Window Functions, Joins, Aggregations, Ranking |
-| Data Cleaning | String operations, date conversion, NULL handling |
-| Analysis | Aggregations, rolling totals, ranking queries |
-| Next Steps | Tableau or Power BI visualization |
+|----------|---------|
+| **Database** | MySQL Workbench – data creation, cleaning, and analysis |
+| **SQL Concepts** | CTEs, Window Functions, Joins, Aggregations, Ranking |
+| **Data Cleaning** | String operations, date conversion, NULL handling |
+| **Analysis** | Grouped aggregations, rolling totals, ranking queries |
+| **Next Steps** | Tableau or Power BI for visualization |
 
 ---
 
 ### Project Learnings
-1. Built a complete SQL data-cleaning pipeline from raw CSV to structured dataset.  
-2. Strengthened use of **CTEs** and **window functions** for EDA.  
-3. Gained experience detecting and resolving real-world data quality issues.  
-4. Improved documentation and presentation of analytical findings.
+1. **End-to-End Pipeline:** Built a complete SQL data-cleaning workflow from raw CSV to clean dataset.  
+2. **Advanced SQL Skills:** Strengthened use of CTEs, window functions, and aggregate logic for exploratory analysis.  
+3. **Data Quality Improvement:** Enhanced ability to detect and resolve real-world data issues such as missing values and inconsistent formats.  
+4. **Professional Documentation:** Learned to communicate technical work effectively through clean, portfolio-ready project reports.  
 
 
 
