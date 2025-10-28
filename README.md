@@ -75,3 +75,9 @@ UPDATE layoffs_staging2
 SET date = STR_TO_DATE(date, '%Y-%m-%d');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN date DATE;
+```
+### Outcome
+
+- Clean, deduplicated dataset stored as layoffs_staging2
+- All columns standardized and formatted
+- Exported final dataset as layoffs_cleaned.csv
