@@ -81,3 +81,11 @@ MODIFY COLUMN date DATE;
 - Clean, deduplicated dataset stored as layoffs_staging2
 - All columns standardized and formatted
 - Exported final dataset as layoffs_cleaned.csv
+
+## Part 2 – Exploratory Data Analysis (EDA)
+
+### Objective
+Analyze global layoff data to uncover high-level trends, key affected industries, and year-over-year changes.
+
+
+
