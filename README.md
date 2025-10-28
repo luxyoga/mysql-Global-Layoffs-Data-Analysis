@@ -1,4 +1,4 @@
-# MySQL Portfolio Project – Global Layoffs Data (Data Cleaning + Exploratory Data Analysis)
+# MySQL – Global Layoffs Data Analysis (Data Cleaning + Exploratory Data Analysis)
 
 ## Overview
 This project was built in **MySQL Workbench** to demonstrate real-world data cleaning, transformation, and analytical skills using SQL.  
