@@ -92,15 +92,15 @@ Analyze global layoff data to uncover high-level trends, key affected industries
 
 ### Analytical Focus
 
-| Category | Question Answered |
-|------|--------------|
-| Company | Which companies experienced the largest layoffs? |
-| Industry | Which sectors were most impacted? |
-| Country | Which regions were affected most? |
-| Year | How did layoffs evolve annually? |
-| Stage | Were startups or public companies hit harder? |
-| Rolling Trends | How did layoffs accumulate month-to-month? |
-| Ranking | Which were the top 5 companies by layoffs each year? |
+| Category        | Question Answered                                         |
+|:----------------|:----------------------------------------------------------|
+| Company         | Which companies experienced the largest layoffs?          |
+| Industry        | Which sectors were most impacted?                         |
+| Country         | Which regions were affected most?                         |
+| Year            | How did layoffs evolve annually?                          |
+| Stage           | Were startups or public companies hit harder?             |
+| Rolling Trends  | How did layoffs accumulate month-to-month?                |
+| Ranking         | Which were the top 5 companies by layoffs each year?      |
 
 ### Example Queries
 ```sql
