@@ -83,6 +83,8 @@ MODIFY COLUMN date DATE;
 - All columns standardized and formatted
 - Exported final dataset as layoffs_cleaned.csv
 
+---
+
 ## Part 2 – Exploratory Data Analysis (EDA)
 
 ### Objective
