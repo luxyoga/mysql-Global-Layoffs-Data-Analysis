@@ -158,15 +158,19 @@ ORDER BY year DESC, ranking;
 | **SQL Concepts** | CTEs, Window Functions, Joins, Aggregations, Ranking |
 | **Data Cleaning** | String operations, date conversion, NULL handling |
 | **Analysis** | Grouped aggregations, rolling totals, ranking queries |
-| **Next Steps** | Tableau or Power BI for visualization |
 
 ---
 
 ### Project Learnings
 1. **End-to-End Pipeline:** Built a complete SQL data-cleaning workflow from raw CSV to clean dataset.  
 2. **Advanced SQL Skills:** Strengthened use of CTEs, window functions, and aggregate logic for exploratory analysis.  
-3. **Data Quality Improvement:** Enhanced ability to detect and resolve real-world data issues such as missing values and inconsistent formats.  
-4. **Professional Documentation:** Learned to communicate technical work effectively through clean, portfolio-ready project reports.  
+3. **Data Quality Improvement:** Enhanced ability to detect and resolve real-world data issues such as missing values and inconsistent formats.
+
+---
+
+### Next Steps
+Tableau or Power BI for visualization
+
 
 
 
