@@ -76,6 +76,7 @@ SET date = STR_TO_DATE(date, '%Y-%m-%d');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN date DATE;
 ```
+
 ### Outcome
 
 - Clean, deduplicated dataset stored as layoffs_staging2
@@ -86,6 +87,82 @@ MODIFY COLUMN date DATE;
 
 ### Objective
 Analyze global layoff data to uncover high-level trends, key affected industries, and year-over-year changes.
+
+### Analytical Focus
+
+| Category | Question Answered |
+|------|--------------|
+| Company | Which companies experienced the largest layoffs? |
+| Industry | Which sectors were most impacted? |
+| Country | Which regions were affected most? |
+| Year | How did layoffs evolve annually? |
+| Stage | Were startups or public companies hit harder? |
+| Rolling Trends | How did layoffs accumulate month-to-month? |
+| Ranking | Which were the top 5 companies by layoffs each year? |
+
+### Example Queries
+```sql
+-- Total layoffs by industry
+SELECT industry, SUM(total_laid_off) AS total_laid_off
+FROM layoffs_staging2
+GROUP BY industry
+ORDER BY total_laid_off DESC;
+
+-- Rolling total of layoffs by month
+WITH rolling_total AS (
+  SELECT SUBSTRING(date, 1, 7) AS month,
+         SUM(total_laid_off) AS monthly_total
+  FROM layoffs_staging2
+  WHERE SUBSTRING(date, 1, 7) IS NOT NULL
+  GROUP BY month
+)
+SELECT month,
+       monthly_total,
+       SUM(monthly_total) OVER (ORDER BY month) AS rolling_total
+FROM rolling_total;
+
+-- Top 5 companies per year by layoffs
+WITH company_year AS (
+  SELECT company,
+         YEAR(date) AS year,
+         SUM(total_laid_off) AS total_laid_off
+  FROM layoffs_staging2
+  GROUP BY company, YEAR(date)
+),
+company_year_rank AS (
+  SELECT *,
+         DENSE_RANK() OVER (PARTITION BY year ORDER BY total_laid_off DESC) AS ranking
+  FROM company_year
+)
+SELECT company, year, total_laid_off, ranking
+FROM company_year_rank
+WHERE ranking <= 5
+ORDER BY year DESC, ranking;
+```
+
+### Key Insights
+
+- 2022–2023 experienced the highest volume of global layoffs
+- Tech, Crypto, and Retail were the hardest-hit industries
+- United States accounted for the largest share of total layoffs
+- Late-stage and public companies led in absolute layoffs, while startups had higher relative percentages
+- Rolling monthly totals show a sharp increase starting mid-2022, peaking in early 2023
+
+### Tools and Techniques
+
+- MySQL Workbench – database creation, cleaning, and analysis
+- SQL Concepts: CTEs, Window Functions, Joins, Aggregations, Ranking
+- Data Cleaning: String operations, date conversion, NULL handling
+- Analysis: Grouped aggregations, rolling totals, ranking queries
+- Next Steps: Tableau or Power BI for visualization
+
+### Project Learnings
+
+- Built a complete SQL data-cleaning pipeline from raw CSV to clean dataset
+- Strengthened use of CTEs, window functions, and aggregate logic for EDA
+- Improved ability to identify and resolve real-world data quality issues
+
+
 
 
 
